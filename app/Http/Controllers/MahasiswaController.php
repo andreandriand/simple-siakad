@@ -26,7 +26,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('insert', ['title' => 'Tambah Data']);
     }
 
     /**
@@ -37,7 +37,16 @@ class MahasiswaController extends Controller
      */
     public function store(StoreMahasiswaRequest $request)
     {
-        //
+        $mahasiswa = $request->validate([
+            'nama' => 'required|min:3|max:255',
+            'nrp' => 'required|unique:mahasiswas|min:12|max:12',
+            'email' => 'required|email|unique:mahasiswas|max:255',
+            'alamat' => 'required|max:255'
+        ]);
+
+        Mahasiswa::create($mahasiswa);
+
+        return (redirect()->route('home'))->with('success', 'Data berhasil ditambahkan');
     }
 
     /**

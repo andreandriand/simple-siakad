@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MahasiswaController::class, 'index'])->name('home');
-Route::get('/tambah', function () {
-    return view('insert', ['title' => 'Tambah Data']);
-});
+Route::get('/tambah', [MahasiswaController::class, 'create'])->name('tambah');
+Route::post('/tambah', [MahasiswaController::class, 'store']);
 Route::get('/about', function () {
     return view('about', ['title' => 'About Me']);
 });
