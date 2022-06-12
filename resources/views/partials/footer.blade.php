@@ -16,7 +16,7 @@
     </div>
     <!--Grid column-->
     <div class="col-lg-2 col-md-4">
-        <h5 class="">Contact</h5>
+        <h5>Contact</h5>
 
         <ul class="list-unstyled mt-4">
             <li>
@@ -32,7 +32,7 @@
     </div>
     <!--Grid column-->
     <div class="col-lg-2 col-md-4">
-        <h5 class="">Layanan</h5>
+        <h5>Layanan</h5>
 
         <ul class="list-unstyled mt-4">
             <li>
@@ -53,7 +53,7 @@
 
     <!--Grid column-->
     <div class="col-lg-2 col-md-4">
-        <h5 class="">Resource</h5>
+        <h5>Resource</h5>
 
         <ul class="list-unstyled mt-4">
             <li>
