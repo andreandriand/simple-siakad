@@ -14,7 +14,7 @@
         @endif
         <div class="row">
             <div class="col">
-                <h2>Data Mahasiswa</h2>
+                <h2 class="fw-bold">Data Mahasiswa</h2>
             </div>
         </div>
         <div class="row">

@@ -4,7 +4,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
-                <h1>Edit Data Mahasiswa</h1>
+                <h2 class="fw-bold">Edit Data Mahasiswa</h2>
             </div>
         </div>
         <div class="row mt-5">
