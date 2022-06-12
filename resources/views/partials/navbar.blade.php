@@ -10,7 +10,7 @@
           <a class="nav-link {{ ($title === 'Home') ? 'active' : '' }}" href="/">Data Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Tambah Data') ? 'active' : '' }}" href="/tambah">Input Data</a>
+          <a class="nav-link {{ ($title === 'Tambah Data' || $title === 'Edit Data') ? 'active' : '' }}" href="/tambah">{{ ($title === 'Edit Data') ? 'Edit Data' : 'Input Data' }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ ($title === 'About Me') ? 'active' : '' }}" href="/about">About Me</a>

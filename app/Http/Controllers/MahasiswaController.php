@@ -68,7 +68,10 @@ class MahasiswaController extends Controller
      */
     public function edit(Mahasiswa $mahasiswa)
     {
-        //
+        return view('edit', [
+            'title' => 'Edit Data',
+            'mhs' => $mahasiswa
+        ]);
     }
 
     /**
@@ -80,7 +83,25 @@ class MahasiswaController extends Controller
      */
     public function update(UpdateMahasiswaRequest $request, Mahasiswa $mahasiswa)
     {
-        //
+        $rules = [
+            'nama' => 'required|min:3|max:255',
+            'alamat' => 'required|max:255'
+        ];
+
+        if ($request->nrp != $mahasiswa->nrp) {
+            $rules['nrp'] = 'required|unique:mahasiswas|min:12|max:12';
+        }
+
+        if ($request->email != $mahasiswa->email) {
+            $rules['email'] = 'required|email|unique:mahasiswas|max:255';
+        }
+
+        $data = $request->validate($rules);
+
+        Mahasiswa::where('id', $mahasiswa->id)
+            ->update($data);
+
+        return redirect()->route('home')->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -91,6 +112,7 @@ class MahasiswaController extends Controller
      */
     public function destroy(Mahasiswa $mahasiswa)
     {
-        //
+        Mahasiswa::destroy($mahasiswa->id);
+        return redirect()->route('home')->with('success', 'Data berhasil dihapus');
     }
 }

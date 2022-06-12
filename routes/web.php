@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MahasiswaController::class, 'index'])->name('home');
 Route::get('/tambah', [MahasiswaController::class, 'create'])->name('tambah');
 Route::post('/tambah', [MahasiswaController::class, 'store']);
+Route::get('/edit/{mahasiswa:nrp}', [MahasiswaController::class, 'edit'])->name('edit');
+Route::put('/edit/{mahasiswa:nrp}', [MahasiswaController::class, 'update']);
+Route::delete('/delete/{mahasiswa:nrp}', [MahasiswaController::class, 'destroy'])->name('hapus');
 Route::get('/about', function () {
     return view('about', ['title' => 'About Me']);
 });
